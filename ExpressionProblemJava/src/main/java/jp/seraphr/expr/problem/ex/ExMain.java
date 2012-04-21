@@ -16,11 +16,21 @@ public class ExMain {
         public Add(Node aLeft, Node aRight) {
             super(aLeft, aRight);
         }
+
+        @Override
+        public Node getThis() {
+            return this;
+        }
     }
 
     private static class Sub extends SubNode<Visitor, Node> implements Node {
         public Sub(Node aLeft, Node aRight) {
             super(aLeft, aRight);
+        }
+
+        @Override
+        public Node getThis() {
+            return this;
         }
     }
 
@@ -28,11 +38,21 @@ public class ExMain {
         public Mul(Node aLeft, Node aRight) {
             super(aLeft, aRight);
         }
+
+        @Override
+        public Node getThis() {
+            return this;
+        }
     }
 
     private static class Number extends NumberNode<Visitor, Node> implements Node {
         public Number(int aValue) {
             super(aValue);
+        }
+
+        @Override
+        public Node getThis() {
+            return this;
         }
     }
 

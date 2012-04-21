@@ -7,7 +7,7 @@ package jp.seraphr.expr.problem.base;
 /**
  *
  */
-public class NumberNode<V extends BaseVisitor<V, N>, N extends BaseNode<V, N>> implements BaseNode<V, N> {
+public abstract class NumberNode<V extends BaseVisitor<V, N>, N extends BaseNode<V, N>> implements BaseNode<V, N> {
 
     public NumberNode(int aValue) {
         super();
@@ -15,6 +15,9 @@ public class NumberNode<V extends BaseVisitor<V, N>, N extends BaseNode<V, N>> i
     }
 
     private int mValue;
+
+    @Override
+    public abstract N getThis();
 
     @Override
     public N getLeft() {
